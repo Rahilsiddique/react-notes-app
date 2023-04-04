@@ -5,7 +5,7 @@ const AddNote = ({ handleAddNote }) => {
   const [newNote, setNewNote] = useState("");
   const wordLimit = 300;
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     if (wordLimit - e.target.value.length >= 0) {
       setNewNote(e.target.value);
     }
@@ -27,7 +27,9 @@ const AddNote = ({ handleAddNote }) => {
         className="style-1"
       />
       <div className="note-footer">
-        <small>{wordLimit - newNote.length} words remaining</small>
+        <small>
+          {wordLimit - newNote.length} words remaining
+        </small>
         <button className="save" onClick={handleSave}>
           Save
         </button>
